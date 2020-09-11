@@ -74,3 +74,19 @@ REPEAT_SELSORT:
     DEC ES:[COUNTER+2]          ;dec counter register 
     JNZ REPEAT_SELSORT          ;jump until count != 0 
     RET                         ;ret subroutine 
+
+
+    MOV DX,AX 
+    XOR AX,AX
+    MOV DATA_POINTER,0X0000
+    MOV DATA_POINTER,DATA_MOMENTS 
+    LOOPNZ REPEAT_SLESORT 
+    MOV [DATA_POINTER],CX
+    ADD AX,0X0040
+    MOV DATA_POINTER,AX 
+    MOV DATA_POINER,REGISTER
+    MOV CX,CS:[repeat]
+    LOOPNZ REPEAT
+    MOV DATAPOINTER,AX 
+    MOV CX,AX 
+    XOR AX,
